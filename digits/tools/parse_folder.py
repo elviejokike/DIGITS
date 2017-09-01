@@ -225,7 +225,7 @@ def web_listing_all_files(url, count=0, max_count=None):
     urls = []
     dirs, files = parse_web_listing(url)
     for f in files:
-        urls.append(url + f)
+        urls.append(f)
         count += 1
         if max_count is not None and count >= max_count:
             logger.warning('Reached maximum limit for this category')
