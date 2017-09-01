@@ -212,6 +212,7 @@ def parse_web_listing(url):
                 dirs.append(match.group(1))
 
             elif match.group(1).lower().endswith(utils.image.SUPPORTED_EXTENSIONS):
+                print('file found ' + match.group(1));
                 files.append(match.group(1))
     return (dirs, files)
 
@@ -225,6 +226,7 @@ def web_listing_all_files(url, count=0, max_count=None):
     urls = []
     dirs, files = parse_web_listing(url)
     for f in files:
+        print('using file' + f);
         urls.append(f)
         count += 1
         if max_count is not None and count >= max_count:
