@@ -200,7 +200,9 @@ def parse_web_listing(url):
 
     r = requests.get(url, timeout=3.05)
     if r.status_code != requests.codes.ok:
-        raise Exception('HTTP Status Code %s' % r.status_code)
+        print('URL fails for' + str(url))
+        print('HTTP Status Code %s' % r.status_code)
+        
 
     for line in r.content.split('\n'):
         line = line.strip()
